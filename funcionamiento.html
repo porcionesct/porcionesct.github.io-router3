@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Router: Funcionamiento Detallado</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>📡 El Router (Enrutador)</h1>
+        <p>Funcionamiento Detallado del Dispositivo</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Definición</a></li>
+            <li class="active"><a href="funcionamiento.html">Funcionamiento</a></li>
+            <li><a href="caracteristicas.html">Características</a></li>
+            <li><a href="tipos.html">Tipos</a></li>
+            <li><a href="presupuesto.html">Presupuesto</a></li>
+            <li><a href="glosario.html">Glosario</a></li>
+            <li><a href="guia_basica.html">FAQ / Guía</a></li>
+            <li><a href="evaluacion.html">Evaluación</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>⚙️ Funcionamiento Detallado del Router</h2>
+        
+        <p>El router opera principalmente en la **Capa de Red (Capa 3)** del modelo OSI. Su misión es garantizar que los paquetes de datos que viajan entre redes lleguen a su destino de la manera más eficiente posible. Esto se logra mediante un proceso conocido como **Enrutamiento**.</p>
+        
+        <p>Aquí se explica el ciclo de vida de un paquete de datos a través de un router:</p>
+
+        <h3>1. Encapsulamiento y Generación del Paquete</h3>
+        <ul>
+            <li>
+                <strong>Origen:</strong> Un dispositivo (por ejemplo, tu PC) genera datos que deben enviarse a otra red (Internet).
+            </li>
+            <li>
+                <strong>Capa de Red:</strong> Estos datos se dividen en **paquetes**. A cada paquete se le asigna la **Dirección IP de Origen** (la IP de tu PC) y la **Dirección IP de Destino** (la IP del servidor web que quieres visitar).
+            </li>
+            <li>
+                <strong>Gateway:</strong> Si el destino no está en la red local, la dirección de la **puerta de enlace predeterminada (Gateway)**, que es la dirección IP del router, se añade como el siguiente "salto" para el paquete.
+            </li>
+        </ul>
+        
+        <h3>2. Recepción y Proceso de Enrutamiento</h3>
+        <ul>
+            <li>
+                <strong>Recepción:</strong> El router recibe el paquete a través de una de sus interfaces (por cable o Wi-Fi).
+            </li>
+            <li>
+                <strong>Decisión de Ruta:</strong> El router examina la **Dirección IP de Destino** del paquete. Luego, consulta su **Tabla de Enrutamiento** (Routing Table), que es una base de datos interna que mapea las redes conocidas con el camino que debe tomar el paquete para llegar a ellas.
+            </li>
+            <li>
+                <strong>Tipos de Entrada en la Tabla:</strong>
+                <ul>
+                    <li><strong>Rutas Conectadas Directamente:</strong> Redes a las que el router está físicamente conectado.</li>
+                    <li><strong>Rutas Estáticas:</strong> Rutas configuradas manualmente por el administrador.</li>
+                    <li><strong>Rutas Dinámicas:</strong> Rutas aprendidas automáticamente de otros routers mediante protocolos de enrutamiento (como OSPF o EIGRP).</li>
+                    <li><strong>Ruta Predeterminada (Default Gateway):</strong> La ruta usada si la IP de destino no se encuentra en ninguna otra entrada (generalmente, a Internet).</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3>3. Traducción y Reenvío (NAT)</h3>
+        
+        <p>Si el paquete va hacia Internet, el router aplica la función de **Traducción de Direcciones de Red (NAT)**:</p>
+        <ul>
+            <li>
+                <strong>NAT:</strong> El router reemplaza la **Dirección IP privada** de origen del paquete con su propia **Dirección IP pública** asignada por el ISP. Esto permite que miles de dispositivos en la LAN parezcan ser una sola entidad para el mundo exterior.
+            </li>
+            <li>
+                **Reenvío:** Una vez que el router ha determinado la mejor ruta (la interfaz de salida) y ha modificado la dirección de origen (si aplica NAT), reenvía el paquete al siguiente dispositivo en la ruta (el siguiente *hop*), que puede ser otro router o el destino final.
+            </li>
+        </ul>
+        
+        <p>Este proceso se repite en cada router intermedio hasta que el paquete llega al destino y la respuesta sigue el camino inverso.</p>
+
+    </div>
+
+</body>
+</html>

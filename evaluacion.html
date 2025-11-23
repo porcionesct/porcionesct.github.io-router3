@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Evaluación del Router</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+</head>
+<body>
+        /* Estilos específicos para el test */
+        .test-container {
+            padding: 20px;
+        }
+        .pregunta {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-left: 5px solid #0056b3;
+            border-radius: 4px;
+        }
+        .pregunta p {
+            font-weight: bold;
+            color: #0056b3;
+            margin-top: 0;
+        }
+        label {
+            display: block;
+            margin: 8px 0;
+            font-weight: normal;
+        }
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+        #resultado {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e0eaff;
+            border: 2px solid #0056b3;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: none; /* Oculto por defecto */
+        }
+        .btn-corregir {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn-corregir:hover {
+            background-color: #218838;
+        }
+    </style>
+
+    <header>
+        <h1>📡 El Router (Enrutador)</h1>
+        <p>Test de Evaluación de Contenidos</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Definición</a></li>
+            <li><a href="funcionamiento.html">Funcionamiento</a></li>
+            <li><a href="caracteristicas.html">Características</a></li>
+            <li><a href="tipos.html">Tipos</a></li>
+            <li><a href="presupuesto.html">Presupuesto</a></li>
+            <li><a href="glosario.html">Glosario</a></li>
+            <li><a href="guia_basica.html">FAQ / Guía</a></li>
+            <li class="active"><a href="evaluacion.html">Evaluación</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>✅ Test de 30 Preguntas</h2>
+        <p>Selecciona la respuesta correcta para cada pregunta. Una vez finalices, pulsa el botón "Corregir Test" para ver tu puntuación.</p>
+
+        <form id="quizForm">
+            <div class="pregunta">
+                <p>1. ¿En qué capa del modelo OSI opera principalmente un router?</p>
+                <label><input type="radio" name="p1" value="a"> Capa 1 (Física)</label>
+                <label><input type="radio" name="p1" value="b"> Capa 2 (Enlace de Datos)</label>
+                <label><input type="radio" name="p1" value="c"> Capa 3 (Red)</label>
+                <label><input type="radio" name="p1" value="d"> Capa 4 (Transporte)</label>
+            </div>
+
+            <div class="pregunta">
+                <p>2. ¿Cuál es la función principal de un router?</p>
+                <label><input type="radio" name="p2" value="a"> Generar y amplificar la señal Wi-Fi.</label>
+                <label><input type="radio" name="p2" value="b"> Almacenar datos en la nube.</label>
+                <label><input type="radio" name="p2" value="c"> Dirigir el tráfico de datos (paquetes) entre redes.</label>
+                <label><input type="radio" name="p2" value="d"> Asignar la dirección MAC a los dispositivos.</label>
+            </div>
+
+            <div class="pregunta">
+                <p>3. ¿Qué funcionalidad permite que múltiples dispositivos compartan una única IP pública?</p>
+                <label><input type="radio" name="p3" value="a"> QoS (Quality of Service)</label>
+                <label><input type="radio" name="p3" value="b"> DHCP</label>
+                <label><input type="radio" name="p3" value="c"> NAT (Network Address Translation)</label>
+                <label><input type="radio" name="p3" value="d"> VPN</label>
+            </div>
+
+            <div class="pregunta">
+                <p>4. El protocolo que asigna automáticamente direcciones IP a los dispositivos se llama:</p>
+                <label><input type="radio" name="p4" value="a"> DNS</label>
+                <label><input type="radio" name="p4" value="b"> DHCP</label>
+                <label><input type="radio" name="p4" value="c"> FTP</label>
+                <label><input type="radio" name="p4" value="d"> ICMP</label>
+            </div>
+
+            <div class="pregunta">
+                <p>5. Un dispositivo que integra un módem y un router en una sola unidad se conoce como:</p>
+                <label><input type="radio" name="p5" value="a"> Switch</label>
+                <label><input type="radio" name="p5" value="b"> Router Core</label>
+                <label><input type="radio" name="p5" value="c"> Punto de Acceso</label>
+                <label><input type="radio" name="p5" value="d"> Gateway</label>
+            </div>
+
+            <div class="pregunta">
+                <p>6. ¿Qué tipo de router maneja el tráfico pesado en el "corazón" de las grandes redes de ISP?</p>
+                <label><input type="radio" name="p6" value="a"> Router con Cable</label>
+                <label><input type="radio" name="p6" value="b"> Router de Núcleo (Core)</label>
+                <label><input type="radio" name="p6" value="c"> Router Perimetral (Edge)</label>
+                <label><input type="radio" name="p6" value="d"> Router de Distribución</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>7. ¿Qué examina un router en un paquete de datos para decidir la ruta a seguir?</p>
+                <label><input type="radio" name="p7" value="a"> La Dirección MAC de Origen</label>
+                <label><input type="radio" name="p7" value="b"> La URL del sitio web</label>
+                <label><input type="radio" name="p7" value="c"> La Dirección IP de Destino</label>
+                <label><input type="radio" name="p7" value="d"> La Latencia</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>8. La base de datos interna que usa el router para determinar la mejor ruta se llama:</p>
+                <label><input type="radio" name="p8" value="a"> Cache de DNS</label>
+                <label><input type="radio" name="p8" value="b"> Tabla ARP</label>
+                <label><input type="radio" name="p8" value="c"> Tabla de Enrutamiento</label>
+                <label><input type="radio" name="p8" value="d"> Tabla de MAC</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>9. ¿Cuál es el protocolo de cifrado Wi-Fi más recomendado actualmente?</p>
+                <label><input type="radio" name="p9" value="a"> WEP</label>
+                <label><input type="radio" name="p9" value="b"> WPA</label>
+                <label><input type="radio" name="p9" value="c"> WPA2</label>
+                <label><input type="radio" name="p9" value="d"> WPA3</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>10. ¿Qué medida de seguridad se logra al crear una Red de Invitados?</p>
+                <label><input type="radio" name="p10" value="a"> Acelerar la conexión Wi-Fi</label>
+                <label><input type="radio" name="p10" value="b"> Aislar a las visitas de los dispositivos y archivos personales.</label>
+                <label><input type="radio" name="p10" value="c"> Cambiar automáticamente la IP pública.</label>
+                <label><input type="radio" name="p10" value="d"> Evitar el *Port Forwarding*.</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>11. ¿Qué mide la Latencia?</p>
+                <label><input type="radio" name="p11" value="a"> La velocidad máxima de descarga.</label>
+                <label><input type="radio" name="p11" value="b"> El número de dispositivos conectados.</label>
+                <label><input type="radio" name="p11" value="c"> La demora en la comunicación de red (tiempo de ida y vuelta).</label>
+                <label><input type="radio" name="p11" value="d"> La potencia de la señal Wi-Fi.</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>12. ¿Cuál es el nombre del estándar Wi-Fi 6?</p>
+                <label><input type="radio" name="p12" value="a"> 802.11n</label>
+                <label><input type="radio" name="p12" value="b"> 802.11ac</label>
+                <label><input type="radio" name="p12" value="c"> 802.11ax</label>
+                <label><input type="radio" name="p12" value="d"> 802.11g</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>13. ¿Cuál es la IP de acceso más común para la interfaz de un router doméstico?</p>
+                <label><input type="radio" name="p13" value="a"> 255.255.255.0</label>
+                <label><input type="radio" name="p13" value="b"> 192.168.1.1</label>
+                <label><input type="radio" name="p13" value="c"> 8.8.8.8</label>
+                <label><input type="radio" name="p13" value="d"> 127.0.0.1</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>14. ¿Qué significa hacer un "ciclo de energía" en un router?</p>
+                <label><input type="radio" name="p14" value="a"> Apagar y encender el Wi-Fi.</label>
+                <label><input type="radio" name="p14" value="b"> Actualizar el firmware.</label>
+                <label><input type="radio" name="p14" value="c"> Desconectar y volver a conectar la fuente de alimentación.</label>
+                <label><input type="radio" name="p14" value="d"> Cambiar la dirección IP.</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>15. ¿Cuál suele ser el componente más costoso en una implementación de red empresarial compleja?</p>
+                <label><input type="radio" name="p15" value="a"> Los adaptadores de red de los PCs.</label>
+                <label><input type="radio" name="p15" value="b"> El costo de la suscripción a Internet.</label>
+                <label><input type="radio" name="p15" value="c"> La mano de obra y el cableado estructurado.</label>
+                <label><input type="radio" name="p15" value="d"> El coste del software antivirus.</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>16. En una instalación doméstica típica por ISP, ¿cuál suele ser el costo inicial del hardware?</p>
+                <label><input type="radio" name="p16" value="a"> Alto (más de 300€)</label>
+                <label><input type="radio" name="p16" value="b"> Medio (entre 100€ y 300€)</label>
+                <label><input type="radio" name="p16" value="c"> Bajo (0€ a 50€, ya que suele ser cedido)</label>
+                <label><input type="radio" name="p16" value="d"> El 50% del precio total de la suscripción.</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>17. La banda de 5 GHz del Wi-Fi proporciona generalmente:</p>
+                <label><input type="radio" name="p17" value="a"> Mayor alcance y menor velocidad.</label>
+                <label><input type="radio" name="p17" value="b"> Menor alcance y mayor velocidad.</label>
+                <label><input type="radio" name="p17" value="c"> Mayor penetración a través de muros.</label>
+                <label><input type="radio" name="p17" value="d"> Menor interferencia con dispositivos Bluetooth.</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>18. ¿Qué significa la sigla WAN en el contexto de redes?</p>
+                <label><input type="radio" name="p18" value="a"> Wireless Area Network</label>
+                <label><input type="radio" name="p18" value="b"> Wired Access Node</label>
+                <label><input type="radio" name="p18" value="c"> Wide Area Network</label>
+                <label><input type="radio" name="p18" value="d"> Web Administration Node</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>19. ¿Cuál es la función del DNS?</p>
+                <label><input type="radio" name="p19" value="a"> Asignar IPs automáticamente.</label>
+                <label><input type="radio" name="p19" value="b"> Traducir nombres de dominio a direcciones IP.</label>
+                <label><input type="radio" name="p19" value="c"> Controlar la velocidad de subida.</label>
+                <label><input type="radio" name="p19" value="d"> Abrir puertos para consolas de juego.</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>20. ¿Por qué es vital mantener el firmware del router actualizado?</p>
+                <label><input type="radio" name="p20" value="a"> Para acelerar la velocidad del procesador interno.</label>
+                <label><input type="radio" name="p20" value="b"> Para cambiar el nombre del SSID.</label>
+                <label><input type="radio" name="p20" value="c"> Para parchear vulnerabilidades de seguridad.</label>
+                <label><input type="radio" name="p20" value="d"> Para asegurar que la luz de estado parpadee correctamente.</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>21. ¿Qué tipo de router empresarial se sitúa en el límite de la red, conectándola con el exterior?</p>
+                <label><input type="radio" name="p21" value="a"> Router Core</label>
+                <label><input type="radio" name="p21" value="b"> Router de Distribución</label>
+                <label><input type="radio" name="p21" value="c"> Router Perimetral (Edge)</label>
+                <label><input type="radio" name="p21" value="d"> Router Inalámbrico</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>22. ¿Cómo se llama el proceso por el cual el router envía paquetes de datos al siguiente punto en la ruta?</p>
+                <label><input type="radio" name="p22" value="a"> Switching</label>
+                <label><input type="radio" name="p22" value="b"> Enrutamiento (Routing)</label>
+                <label><input type="radio" name="p22" value="c"> Bridging</label>
+                <label><input type="radio" name="p22" value="d"> Tunneling</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>23. El término QoS hace referencia a:</p>
+                <label><input type="radio" name="p23" value="a"> Quality of Supply</label>
+                <label><input type="radio" name="p23" value="b"> Quick Open System</label>
+                <label><input type="radio" name="p23" value="c"> Quality of Service</label>
+                <label><input type="radio" name="p23" value="d"> Query Optimization System</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>24. ¿Qué es un Firewall?</p>
+                <label><input type="radio" name="p24" value="a"> Un software para descargar archivos torrents.</label>
+                <label><input type="radio" name="p24" value="b"> Un sistema que controla y filtra el tráfico entrante y saliente.</label>
+                <label><input type="radio" name="p24" value="c"> Un cable de fibra óptica.</label>
+                <label><input type="radio" name="p24" value="d"> Un punto de acceso Wi-Fi.</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>25. Los routers utilizan puertos RJ45 para la conectividad:</p>
+                <label><input type="radio" name="p25" value="a"> Inalámbrica</label>
+                <label><input type="radio" name="p25" value="b"> Satelital</label>
+                <label><input type="radio" name="p25" value="c"> Por cable (Ethernet)</label>
+                <label><input type="radio" name="p25" value="d"> Bluetooth</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>26. El "Port Forwarding" se utiliza para:</p>
+                <label><input type="radio" name="p26" value="a"> Aumentar el alcance Wi-Fi.</label>
+                <label><input type="radio" name="p26" value="b"> Redirigir conexiones externas a un dispositivo interno específico.</label>
+                <label><input type="radio" name="p26" value="c"> Bloquear todo el tráfico saliente.</label>
+                <label><input type="radio" name="p26" value="d"> Reemplazar la función NAT.</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>27. ¿Cuál es una ventaja económica del "Gateway" (Módem-Router Combinado)?</p>
+                <label><input type="radio" name="p27" value="a"> Permite usar routers de otras marcas sin problema.</label>
+                <label><input type="radio" name="p27" value="b"> Es el dispositivo que suelen proporcionar gratis o a bajo costo los ISP.</label>
+                <label><input type="radio" name="p27" value="c"> Ahorra en el costo de la factura mensual de Internet.</label>
+                <label><input type="radio" name="p27" value="d"> Permite cablear toda la casa con fibra óptica.</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>28. ¿Qué es el "Gateway predeterminado" para un dispositivo en la LAN?</p>
+                <label><input type="radio" name="p28" value="a"> La dirección MAC del servidor DNS.</label>
+                <label><input type="radio" name="p28" value="b"> La dirección IP del router.</label>
+                <label><input type="radio" name="p28" value="c"> La dirección IP del dispositivo local.</label>
+                <label><input type="radio" name="p28" value="d"> La dirección IP del servidor web de destino.</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>29. ¿Qué define el Ancho de Banda?</p>
+                <label><input type="radio" name="p29" value="a"> La distancia máxima de alcance Wi-Fi.</label>
+                <label><input type="radio" name="p29" value="b"> La cantidad máxima de datos que se puede transferir en un tiempo.</label>
+                <label><input type="radio" name="p29" value="c"> El número de puertos Ethernet disponibles.</label>
+                <label><input type="radio" name="p29" value="d"> La dirección física del dispositivo.</label>
+            </div>
+            
+            <div class="pregunta">
+                <p>30. Deshabilitar la Gestión Remota de un router sirve para:</p>
+                <label><input type="radio" name="p30" value="a"> Bloquear el tráfico de Wi-Fi.</label>
+                <label><input type="radio" name="p30" value="b"> Impedir que alguien fuera de la red local acceda a la configuración.</label>
+                <label><input type="radio" name="p30" value="c"> Limpiar la caché DNS.</label>
+                <label><input type="radio" name="p30" value="d"> Aplicar el protocolo WPA3.</label>
+            </div>
+
+            <button type="button" class="btn-corregir" onclick="corregirTest()">Corregir Test</button>
+        </form>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // Respuestas correctas (índices de los valores de radio: a=0, b=1, c=2, d=3)
+        // Usamos el valor de la opción correcta (ej: 'c')
+        const respuestasCorrectas = {
+            p1: 'c', p2: 'c', p3: 'c', p4: 'b', p5: 'd',
+            p6: 'b', p7: 'c', p8: 'c', p9: 'd', p10: 'b',
+            p11: 'c', p12: 'c', p13: 'b', p14: 'c', p15: 'c',
+            p16: 'c', p17: 'b', p18: 'c', p19: 'b', p20: 'c',
+            p21: 'c', p22: 'b', p23: 'c', p24: 'b', p25: 'c',
+            p26: 'b', p27: 'b', p28: 'b', p29: 'b', p30: 'b'
+        };
+
+        function corregirTest() {
+            const form = document.getElementById('quizForm');
+            const resultadoDiv = document.getElementById('resultado');
+            let puntuacion = 0;
+            const totalPreguntas = 30;
+
+            for (let i = 1; i <= totalPreguntas; i++) {
+                const nombrePregunta = `p${i}`;
+                const respuestaSeleccionada = form.elements[nombrePregunta].value;
+                const respuestaCorrecta = respuestasCorrectas[nombrePregunta];
+
+                if (respuestaSeleccionada === respuestaCorrecta) {
+                    puntuacion++;
+                }
+            }
+
+            const porcentaje = ((puntuacion / totalPreguntas) * 100).toFixed(0);
+
+            resultadoDiv.innerHTML = `
+                <p>¡Test Finalizado! Tu Puntuación es:</p>
+                <p>Respuestas Correctas: <span style="color: green;">${puntuacion}</span> de ${totalPreguntas}</p>
+                <p>Porcentaje: ${porcentaje}%</p>
+            `;
+            resultadoDiv.style.display = 'block';
+            
+            // Desplazar la vista al resultado
+            resultadoDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
